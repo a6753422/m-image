@@ -1,0 +1,78 @@
+icon: '&#xe63b;'
+tags:
+  en:
+    - native image choosen
+  zh-CN:
+    - 本地图片选择器
+props:
+  cols:
+    value: 3
+    en:
+    zh-CN: '宫格行数，建议少于5'
+  gutter:
+    value: 8
+    en:
+    zh-CN: '间隙像素大小（px）'
+  maxCount:
+    value: 0-9
+    en:
+    zh-CN: '可选最大图片数量， 0 - 9 0代表不可选图片'
+  origin:
+    value: [], 举个栗子[{
+      "image_id": "162",
+      "image_url": "http://test-oa.hbeducloud.com:8088/oa_dev/1/c0cc384d67a5407881f0c182a5f68ecd_thumb.jpg",
+      "original_height": "400",
+      "original_size": "55091",
+      "image_crop_url": "http://test-oa.hbeducloud.com:8088/oa_dev/1/6764802ebbaf4227b3b4316a86b14958_crop.jpg",
+      "original_width": "550",
+      "image_name": "赶海.jpg",
+      "original_image_url": "http://test-oa.hbeducloud.com:8088/oa_dev/1/c9307879d00a49368fd6c199ac935634.jpg"
+    }]
+    en: 'origin images you can use when create'
+    zh-CN: '创建图片选择器，初始传入图片数组'
+  murl:
+    value: 'image_crop_url'
+    en:
+    zh-CN: '缩略图url字段名'
+  url:
+    value: 'image_url'
+    en:
+    zh-CN: '原始图url字段名'
+  popupBtn:
+    value: true
+    en: show popupImage button if set true, default true
+    zh-CN: 是否展示选择图片的按钮，默认展示
+  removeIcon:
+    value: true
+    en: show remove icon if set true, default true
+    zh-CN: 是否展示图片的删除图标, 默认展示
+events:
+  on-change:
+    params: '`(value)`'
+    en: 'emits when anyone image is change'
+    zh-CN: '图片发生变化时触发，包括图片数量、图片属性（src）, 注册此事件可满足大部分情况，推荐事件'
+  on-progress:
+    params: '`(value)`'
+    en: 'emits when one image is done'
+    zh-CN: '处理完一张图片时触发 ，可选事件'
+  on-complete:
+    params: '`(value)`'
+    en: 'emits when all images is done'
+    zh-CN: '图片全部处理完成时触发 ，可选事件'
+  on-remove:
+    params: '`(value)`'
+    en: 'emits when one image is removed'
+    zh-CN: '图片被删除时触发 ，可选事件'
+slots:
+  default:
+    en: 'content slot for `flexbox-item`'
+    zh-CN: '选择图片的内容插槽'
+
+methods:
+
+changes:
+  1.0.0:
+    en:
+      - call native image chooser
+    zh-CN:
+      - 唤起本地图片选择器
